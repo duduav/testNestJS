@@ -26,7 +26,7 @@ export class AppService {
   upsertData(UserData :UserData): Promise<any> {
 
     var promise = new Promise(function(resolve, reject) {
-      MealsModel.replaceOne({'_id':UserData.id},UserData,{upsert:true},function (err, data) {
+      MealsModel.replaceOne({'id':UserData.id},UserData,{upsert:true},function (err, data) {
         if (err) {
           reject(err);
         };
